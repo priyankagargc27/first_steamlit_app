@@ -25,12 +25,18 @@ streamlit.dataframe(my_fruit_list)
 streamlit.header("Fruityvice Fruit Advice!")
 
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"Kiwi")
+requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+streamlit.dataframe(fruityvice_normalized)
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"Kiwi")
 #streamlit.text(fruityvice_response.json())
 
 
 # take the json verion of respone for normalized it.
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output it the screnn as table.
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
+
+
+
 
