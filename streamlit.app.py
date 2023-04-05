@@ -27,7 +27,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 import requests
 #import pandas as pd
 requests.get("https://fruityvice.com/api/fruit/kiwi")
-fruityvice_normalized = json_normalize(fruityvice_response.json())
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
